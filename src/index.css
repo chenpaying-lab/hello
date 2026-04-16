@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cyber-black: #0D0D0D;
+  --color-cyber-cyan: #00FFFF;
+  --color-cyber-pink: #FFB7C5;
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Noto Serif TC", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-cyber-black text-white selection:bg-cyber-cyan selection:text-cyber-black;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .neon-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+  .neon-glow-pink {
+    text-shadow: 0 0 10px rgba(255, 183, 197, 0.7), 0 0 20px rgba(255, 183, 197, 0.5);
+  }
+  .neon-border-cyan {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  }
+  .glass-morphism {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  .grid-bg {
+    background: linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px), 
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .slogan-gradient {
+    background: linear-gradient(to bottom, #fff, #00FFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.markdown-content img {
+  @apply rounded-md border border-white/10 my-2 w-full h-auto;
+}
+
+.markdown-content a {
+  @apply text-cyber-cyan underline hover:text-white transition-colors;
+}
+
+.markdown-content p {
+  @apply mb-2 last:mb-0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00FFFF;
+}
